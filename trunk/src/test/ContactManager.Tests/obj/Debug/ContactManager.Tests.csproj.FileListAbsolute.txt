@@ -1,0 +1,8 @@
+C:\Users\Ahmed\Documents\Visual Studio 2008\Projects\ContactManager\ContactManager.Tests\bin\Debug\ContactManager.Tests.dll.config
+C:\Users\Ahmed\Documents\Visual Studio 2008\Projects\ContactManager\ContactManager.Tests\bin\Debug\ContactManager.Tests.dll
+C:\Users\Ahmed\Documents\Visual Studio 2008\Projects\ContactManager\ContactManager.Tests\bin\Debug\ContactManager.Tests.pdb
+C:\Users\Ahmed\Documents\Visual Studio 2008\Projects\ContactManager\ContactManager.Tests\bin\Debug\ContactManager.dll
+C:\Users\Ahmed\Documents\Visual Studio 2008\Projects\ContactManager\ContactManager.Tests\bin\Debug\ContactManager.pdb
+C:\Users\Ahmed\Documents\Visual Studio 2008\Projects\ContactManager\ContactManager.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Ahmed\Documents\Visual Studio 2008\Projects\ContactManager\ContactManager.Tests\obj\Debug\ContactManager.Tests.dll
+C:\Users\Ahmed\Documents\Visual Studio 2008\Projects\ContactManager\ContactManager.Tests\obj\Debug\ContactManager.Tests.pdb
