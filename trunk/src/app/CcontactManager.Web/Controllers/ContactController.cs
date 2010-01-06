@@ -1,37 +1,21 @@
-using System;
-using System.Linq;
 using System.Web.Mvc;
+using ContactManager.Models.Validation;
 using ContactManager.Models;
-using System.Text.RegularExpressions;
 
 namespace ContactManager.Controllers
 {
     public class ContactController : Controller
     {
-        private IContactManagerRepositiory _repository;
+        private IContactManagerService _service;
 
         public ContactController()
-            : this(new EntityContactManagerRepository())
-        { }
-
-        public ContactController(IContactManagerRepositiory repository)
         {
-            _repository = repository;
+            _service = new ContactManagerService(new ModelStateWrapper(this.ModelState));
         }
 
-        // use _entities filed to communicate with database
-        // private ContactManagerDBEntities _entities = new ContactManagerDBEntities();
-
-        protected void ValidateContact(Contact contactToCreate)
+        public ContactController(IContactManagerService service)
         {
-            if (contactToCreate.FirstName.Trim().Length == 0)
-                ModelState.AddModelError("FirstName", "First name is required.");
-            if (contactToCreate.LastName.Trim().Length == 0)
-                ModelState.AddModelError("LastName", "Last name is required.");
-            if (contactToCreate.Phone.Length > 0 && !Regex.IsMatch(contactToCreate.Phone, @"((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}"))
-                ModelState.AddModelError("Phone", "Invalid phone number.");
-            if (contactToCreate.Email.Length > 0 && !Regex.IsMatch(contactToCreate.Email, @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"))
-                ModelState.AddModelError("Email", "Invalid email address.");
+            _service = service;
         }
 
         //
@@ -40,7 +24,7 @@ namespace ContactManager.Controllers
         // contacts from the Contacts database table.
         public ActionResult Index()
         {
-            return View(_repository.ListContacts());
+            return View(_service.ListContacts());
             // returns the list of contacts as a generic list
         }
 
@@ -59,57 +43,33 @@ namespace ContactManager.Controllers
         {
             // new section that validates the properties of the Contact class before 
             // the new contact is inserted into the database.
-            ValidateContact(contactToCreate);
-            if (!ModelState.IsValid)
-                return View();
-
-            //database logic
-            try
-            {
-                _repository.CreateContact(contactToCreate);
+            if (_service.CreateContact(contactToCreate))
                 return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
-
 
         //
         // GET: /Home/Edit/5
-
         public ActionResult Edit(int id)
         {
-            return View(_repository.GetContact(id));
+            return View(_service.GetContact(id));
         }
 
         //
         // POST: /Home/Edit/5
-
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Edit(Contact contactToEdit)
         {
-            ValidateContact(contactToEdit);
-            if (!ModelState.IsValid)
-                return View();
-
-            try
-            {
-                _repository.EditContact(contactToEdit);
+            if (_service.EditContact(contactToEdit))
                 return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
 
         //
         // GET: /Home/Delete/5
         public ActionResult Delete(int id)
         {
-            return View(_repository.GetContact(id));
+            return View(_service.GetContact(id));
         }
 
         //
@@ -117,16 +77,9 @@ namespace ContactManager.Controllers
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Delete(Contact contactToDelete)
         {
-            try
-            {
-                _repository.DeleteContact(contactToDelete);
+            if (_service.DeleteContact(contactToDelete))
                 return RedirectToAction("Index");
-
-            }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
 
         //

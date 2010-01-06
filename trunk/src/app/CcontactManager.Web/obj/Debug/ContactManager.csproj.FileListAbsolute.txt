@@ -9,3 +9,5 @@ C:\Documents and Settings\aabunada\My Documents\My Files\ContactManagerProject\C
 C:\Documents and Settings\aabunada\My Documents\Visual Studio 2008\Projects\mvccontactmanager\src\app\CcontactManager.Web\obj\Debug\ResolveAssemblyReference.cache
 C:\Documents and Settings\aabunada\My Documents\Visual Studio 2008\Projects\mvccontactmanager\src\app\CcontactManager.Web\obj\Debug\ContactManager.dll
 C:\Documents and Settings\aabunada\My Documents\Visual Studio 2008\Projects\mvccontactmanager\src\app\CcontactManager.Web\obj\Debug\ContactManager.pdb
+C:\Documents and Settings\aabunada\My Documents\Visual Studio 2008\Projects\mvccontactmanager\src\app\CcontactManager.Web\bin\ContactManager.dll
+C:\Documents and Settings\aabunada\My Documents\Visual Studio 2008\Projects\mvccontactmanager\src\app\CcontactManager.Web\bin\ContactManager.pdb

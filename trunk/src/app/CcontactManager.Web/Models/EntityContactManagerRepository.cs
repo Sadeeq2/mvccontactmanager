@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Collections;
 
 namespace ContactManager.Models
 {
-    public class EntityContactManagerRepository : ContactManager.Models.IContactManagerRepositiory
+    public class EntityContactManagerRepository : ContactManager.Models.IContactManagerRepository
     {
         private ContactManagerDBEntities _entities = new ContactManagerDBEntities();
         public Contact GetContact(int id)
@@ -16,7 +14,7 @@ namespace ContactManager.Models
                     select c).FirstOrDefault();
         }
 
-        public IEnumerable ListContacts()
+        public IEnumerable<Contact> ListContacts()
         {
             return _entities.ContactSet.ToList();
         }
