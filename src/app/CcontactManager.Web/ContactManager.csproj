@@ -76,8 +76,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ContactManagerModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\ContactManagerService.cs" />
     <Compile Include="Models\EntityContactManagerRepository.cs" />
-    <Compile Include="Models\IContactManagerRepositiory.cs" />
+    <Compile Include="Models\IContactManagerRepository.cs" />
+    <Compile Include="Models\IContactManagerService.cs" />
+    <Compile Include="Models\Validation\IValidationDictionary.cs" />
+    <Compile Include="Models\Validation\ModelStateWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
