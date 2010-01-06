@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Web Developer Express 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManager", "src\app\CcontactManager.Web\ContactManager.csproj", "{D720401D-C158-4329-8AED-F753F6E6B498}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManager.Tests", "src\test\ContactManager.Tests\ContactManager.Tests.csproj", "{35CDFBCE-AC5F-478F-B611-B795E2D2E855}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D720401D-C158-4329-8AED-F753F6E6B498}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D720401D-C158-4329-8AED-F753F6E6B498}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D720401D-C158-4329-8AED-F753F6E6B498}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D720401D-C158-4329-8AED-F753F6E6B498}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35CDFBCE-AC5F-478F-B611-B795E2D2E855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35CDFBCE-AC5F-478F-B611-B795E2D2E855}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35CDFBCE-AC5F-478F-B611-B795E2D2E855}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35CDFBCE-AC5F-478F-B611-B795E2D2E855}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
